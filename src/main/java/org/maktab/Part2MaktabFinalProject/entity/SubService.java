@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.maktab.Part2MaktabFinalProject.entity.base.BaseEntity;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -14,10 +15,7 @@ import java.util.Set;
 @Getter
 @Setter
 @Entity
-public class SubService {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+public class SubService extends BaseEntity<Long> {
     @Column(unique = true)
     private String description;
     private Long basePrice;
@@ -33,7 +31,7 @@ public class SubService {
     @Override
     public String toString() {
         return "SubService{" +
-                "id=" + id +
+                "id=" + getId() +
                 ", description='" + description + '\'' +
                 ", basePrice=" + basePrice +
                 ", service=" + service +

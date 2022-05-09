@@ -1,6 +1,7 @@
 package org.maktab.Part2MaktabFinalProject.entity;
 
 import lombok.*;
+import org.maktab.Part2MaktabFinalProject.entity.base.BaseEntity;
 
 import javax.persistence.*;
 
@@ -11,10 +12,7 @@ import javax.persistence.*;
 @ToString
 @Entity
 @Table(name = "orders")
-public class Order {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+public class Order extends BaseEntity<Long> {
     private String signUpTime;
     @ManyToOne
     private Customer customer;
@@ -25,11 +23,4 @@ public class Order {
     @Enumerated(EnumType.STRING)
     private OrderStatus orderStatus;
 
-    public Order(String signUpTime, Customer customer, SubService subService, Experts expert, OrderStatus orderStatus) {
-        this.signUpTime = signUpTime;
-        this.customer = customer;
-        this.subService = subService;
-        this.expert = expert;
-        this.orderStatus = orderStatus;
-    }
 }

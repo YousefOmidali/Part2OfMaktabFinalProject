@@ -22,8 +22,6 @@ public class Customer extends Users {
     private Wallet wallet;
     @OneToMany(mappedBy = "customer",fetch = FetchType.EAGER)
     private List<Comment> comments;
-//    @OneToMany(mappedBy = "customer")
-//    private List<Order> orders;
 
 
     public Customer(String firstname, String lastname, String email, String username, String password, Status status, String signUpTime, Wallet wallet, List<Comment> comments) {
