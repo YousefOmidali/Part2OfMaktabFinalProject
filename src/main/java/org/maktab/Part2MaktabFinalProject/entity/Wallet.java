@@ -18,5 +18,4 @@ import javax.persistence.Id;
 @Entity
 public class Wallet extends BaseEntity<Long> {
     private Long amount;
-
 }
