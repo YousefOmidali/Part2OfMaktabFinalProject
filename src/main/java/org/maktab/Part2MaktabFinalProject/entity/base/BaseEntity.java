@@ -12,7 +12,7 @@ import java.util.Objects;
 @Setter
 @ToString
 @MappedSuperclass
-public class BaseEntity<ID extends Serializable> {
+public abstract class BaseEntity<ID extends Serializable> {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private ID id;

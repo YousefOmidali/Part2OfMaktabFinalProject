@@ -4,6 +4,7 @@ import lombok.*;
 import org.maktab.Part2MaktabFinalProject.entity.base.BaseEntity;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -18,8 +19,12 @@ public class Order extends BaseEntity<Long> {
     private Customer customer;
     @ManyToOne
     private SubService subService;
-    @OneToOne
-    private Experts expert;
+    private Long suggestedPrice;
+    private String workDescription;
+    private LocalDateTime workDate;
+    private String address;
+//    @OneToOne
+//    private Experts expert;
     @Enumerated(EnumType.STRING)
     private OrderStatus orderStatus;
 
