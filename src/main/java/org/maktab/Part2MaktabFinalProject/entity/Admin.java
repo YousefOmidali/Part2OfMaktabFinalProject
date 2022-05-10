@@ -17,8 +17,8 @@ public class Admin extends Users {
 
 
 
-    public Admin(String firstname, String lastname, String email, String username, String password, Status status, String signUpTime) {
-        super(firstname, lastname, email, username, password, status, signUpTime);
+    public Admin(String firstname, String lastname, String email, String username, String password, UserStatus userStatus, String signUpTime) {
+        super(firstname, lastname, email, username, password, userStatus, signUpTime);
     }
 
     public Admin(String username, String password) {
@@ -33,7 +33,7 @@ public class Admin extends Users {
                 ", firstname='" + getFirstname() + '\'' +
                 ", lastname='" + getLastname() + '\'' +
                 ", email='" + getEmail() + '\'' +
-                ", status='" + getStatus() + '\'' +
+                ", status='" + this.getUserStatus() + '\'' +
                 ", signUptime='" + getSignUpTime() + '\'' +
                 '}';
     }

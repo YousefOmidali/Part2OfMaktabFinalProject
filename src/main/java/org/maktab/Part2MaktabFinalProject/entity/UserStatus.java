@@ -1,6 +1,6 @@
 package org.maktab.Part2MaktabFinalProject.entity;
 
-public enum Status {
+public enum UserStatus {
     NEW,
     AwaitingApproval,
     Accepted

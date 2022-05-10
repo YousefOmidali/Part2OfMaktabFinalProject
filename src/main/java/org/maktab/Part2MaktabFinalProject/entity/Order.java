@@ -14,17 +14,15 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "orders")
 public class Order extends BaseEntity<Long> {
-    private String signUpTime;
     @ManyToOne
     private Customer customer;
     @ManyToOne
     private SubService subService;
+    private String madeTime;
     private Long suggestedPrice;
     private String workDescription;
     private LocalDateTime workDate;
     private String address;
-//    @OneToOne
-//    private Experts expert;
     @Enumerated(EnumType.STRING)
     private OrderStatus orderStatus;
 

@@ -24,8 +24,8 @@ public class Customer extends Users {
     private List<Comment> comments;
 
 
-    public Customer(String firstname, String lastname, String email, String username, String password, Status status, String signUpTime, Wallet wallet, List<Comment> comments) {
-        super(firstname, lastname, email, username, password, status, signUpTime);
+    public Customer(String firstname, String lastname, String email, String username, String password, UserStatus userStatus, String signUpTime, Wallet wallet, List<Comment> comments) {
+        super(firstname, lastname, email, username, password, userStatus, signUpTime);
         this.wallet = wallet;
         this.comments = comments;
     }
@@ -43,7 +43,7 @@ public class Customer extends Users {
                 ", firstname='" + getFirstname() + '\'' +
                 ", lastname='" + getLastname() + '\'' +
                 ", email='" + getEmail() + '\'' +
-                ", status='" + getStatus() + '\'' +
+                ", status='" + this.getUserStatus() + '\'' +
                 ", signUptime='" + getSignUpTime() + '\'' +
                 ", wallet=" + wallet +
                 ", comment=" + comments +

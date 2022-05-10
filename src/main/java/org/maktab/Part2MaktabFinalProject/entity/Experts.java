@@ -16,7 +16,7 @@ import java.util.Set;
 @Entity
 public class Experts extends Users {
 
-    private Long likes;
+    private Long likes;     //This is expert's rating system
     @Lob
     @Column(name = "IMAGE")
     private Blob image;
@@ -27,8 +27,8 @@ public class Experts extends Users {
 
 
     @SneakyThrows
-    public Experts(String firstname, String lastname, String email, String username, String password, Status status, String signUpTime, Long likes, Blob image, Set<SubService> subService, Wallet wallet) {
-        super(firstname, lastname, email, username, password, status, signUpTime);
+    public Experts(String firstname, String lastname, String email, String username, String password, UserStatus userStatus, String signUpTime, Long likes, Blob image, Set<SubService> subService, Wallet wallet) {
+        super(firstname, lastname, email, username, password, userStatus, signUpTime);
         this.likes = likes;
         if ((image.length() / 1024) <= 300)
             this.image = image;
@@ -50,7 +50,7 @@ public class Experts extends Users {
                 ", firstname='" + getFirstname() + '\'' +
                 ", lastname='" + getLastname() + '\'' +
                 ", email='" + getEmail() + '\'' +
-                ", status='" + getStatus() + '\'' +
+                ", status='" + this.getUserStatus() + '\'' +
                 ", signUptime='" + getSignUpTime() + '\'' +
                 ", subService=" + getSubService() +'\'' +
                 ", likes=" + getLikes() + '\'' +

@@ -1,7 +1,7 @@
 package org.maktab.Part2MaktabFinalProject.entity.base;
 
 import lombok.*;
-import org.maktab.Part2MaktabFinalProject.entity.Status;
+import org.maktab.Part2MaktabFinalProject.entity.UserStatus;
 
 import javax.persistence.Column;
 import javax.persistence.EnumType;
@@ -23,17 +23,17 @@ public abstract class Users extends BaseEntity<Long> {
     @Column(nullable = false)
     private String password;
     @Enumerated(EnumType.STRING)
-    private Status status;
+    private UserStatus userStatus;
     private String signUpTime;
 
-    public Users(Long aLong, String firstname, String lastname, String email, String username, String password, Status status, String signUpTime) {
+    public Users(Long aLong, String firstname, String lastname, String email, String username, String password, UserStatus userStatus, String signUpTime) {
         super(aLong);
         this.firstname = firstname;
         this.lastname = lastname;
         this.email = email;
         this.username = username;
         this.password = password;
-        this.status = status;
+        this.userStatus = userStatus;
         this.signUpTime = signUpTime;
     }
 
