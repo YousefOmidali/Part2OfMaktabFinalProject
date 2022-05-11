@@ -1,6 +1,5 @@
 package org.maktab.Part2MaktabFinalProject.services;
 
-import org.maktab.Part2MaktabFinalProject.entity.Experts;
 import org.maktab.Part2MaktabFinalProject.entity.Order;
 import org.maktab.Part2MaktabFinalProject.entity.SubService;
 import org.maktab.Part2MaktabFinalProject.repository.OrderRepository;
@@ -32,7 +31,7 @@ public class OrderService implements BaseService<Order, Long> {
     public void deleteById(Long id) {
         orderRepository.deleteById(id);
     }
-    public List<Order> allOrdersOfSubService(SubService subService) {
+    public List<Order> allOrdersOfASubService(SubService subService) {
         return orderRepository.findAllBySubServiceEquals(subService);
     }
 }
