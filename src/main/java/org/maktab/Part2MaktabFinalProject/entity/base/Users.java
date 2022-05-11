@@ -26,8 +26,8 @@ public abstract class Users extends BaseEntity<Long> {
     private UserStatus userStatus;
     private String signUpTime;
 
-    public Users(Long aLong, String firstname, String lastname, String email, String username, String password, UserStatus userStatus, String signUpTime) {
-        super(aLong);
+    public Users(Long id, String firstname, String lastname, String email, String username, String password, UserStatus userStatus, String signUpTime) {
+        super(id);
         this.firstname = firstname;
         this.lastname = lastname;
         this.email = email;
