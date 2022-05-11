@@ -3,9 +3,10 @@ package org.maktab.Part2MaktabFinalProject.services;
 import org.maktab.Part2MaktabFinalProject.entity.Admin;
 import org.maktab.Part2MaktabFinalProject.repository.AdminRepository;
 import org.maktab.Part2MaktabFinalProject.services.base.BaseService;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service
 public class AdminService implements BaseService<Admin, Long> {
     AdminRepository adminRepository;
 

@@ -9,11 +9,13 @@ import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
+
 @Repository
 public interface ExpertsRepository extends JpaRepository<Experts,Long> {
     Experts findAdminByUsernameAndPassword(String username, String password);
 
-    Experts findAdminByFirstnameOrLastnameOrEmailOrUsername(
+    List<Experts> findExpertsByFirstnameOrLastnameOrEmailOrUsername(
             String firstname
             , String lastname
             , String email

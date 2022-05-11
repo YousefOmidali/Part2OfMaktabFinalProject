@@ -3,9 +3,10 @@ package org.maktab.Part2MaktabFinalProject.services;
 import org.maktab.Part2MaktabFinalProject.entity.Comment;
 import org.maktab.Part2MaktabFinalProject.repository.CommentRepository;
 import org.maktab.Part2MaktabFinalProject.services.base.BaseService;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service
 public class CommentService implements BaseService<Comment, Long> {
     CommentRepository commentRepository;
 
