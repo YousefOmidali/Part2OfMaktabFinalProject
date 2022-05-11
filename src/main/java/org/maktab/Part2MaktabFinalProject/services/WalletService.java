@@ -10,6 +10,10 @@ import java.util.List;
 public class WalletService implements BaseService<Wallet, Long> {
     WalletRepository walletRepository;
 
+    public WalletService(WalletRepository walletRepository) {
+        this.walletRepository = walletRepository;
+    }
+
     @Override
     public Wallet saveOrUpdate(Wallet wallet) {
         return walletRepository.save(wallet);

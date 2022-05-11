@@ -9,11 +9,11 @@ import org.maktab.Part2MaktabFinalProject.entity.exceptions.WrongPriceEntered;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
-import java.time.LocalDateTime;
 
 @NoArgsConstructor
 @Getter
 @Setter
+@ToString
 @Entity
 public class Suggestion extends BaseEntity<Long> {
     @ManyToOne
@@ -21,11 +21,11 @@ public class Suggestion extends BaseEntity<Long> {
     @ManyToOne
     private Order order;
     private Long suggestedPrice;
-    private String workTime;    //because it can be one hour, one day or one month ...
-    private LocalDateTime workStartDate;
+    private String workTime;    // it can be one hour, one day or one month ...
+    private String workStartDate;
 
     
-    public Suggestion(Experts experts, Order order, Long suggestedPrice, String workTime, LocalDateTime workStartDate) {
+    public Suggestion(Experts experts, Order order, Long suggestedPrice, String workTime, String workStartDate) {
         this.experts = experts;
         this.order = order;
         if (suggestedPrice >= order.getSubService().getBasePrice())

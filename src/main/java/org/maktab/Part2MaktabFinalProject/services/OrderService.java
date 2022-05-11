@@ -13,6 +13,10 @@ import java.util.List;
 public class OrderService implements BaseService<Order, Long> {
     OrderRepository orderRepository;
 
+    public OrderService(OrderRepository orderRepository) {
+        this.orderRepository = orderRepository;
+    }
+
     @Override
     @Transactional
     public Order saveOrUpdate(Order order) {

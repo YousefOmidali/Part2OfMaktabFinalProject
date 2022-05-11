@@ -12,6 +12,10 @@ import java.util.List;
 public class SuggestionService implements BaseService<Suggestion, Long> {
     SuggestionRepository suggestionRepository;
 
+    public SuggestionService(SuggestionRepository suggestionRepository) {
+        this.suggestionRepository = suggestionRepository;
+    }
+
     @Override
     @Transactional
     public Suggestion saveOrUpdate(Suggestion suggestion) {
@@ -37,7 +41,7 @@ public class SuggestionService implements BaseService<Suggestion, Long> {
     }
 
     @Transactional
-    public void suggestionsOfAnOrder(Long orderId) {
-        suggestionRepository.findSuggestionsByOrder_IdOrderBySuggestedPriceAsc(orderId);
+    public List<Suggestion> suggestionsOfAnOrder(Long orderId) {
+        return suggestionRepository.findSuggestionsByOrder_IdOrderBySuggestedPriceAsc(orderId);
     }
 }

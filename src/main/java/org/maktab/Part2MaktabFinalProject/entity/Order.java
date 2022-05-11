@@ -21,7 +21,7 @@ public class Order extends BaseEntity<Long> {
     private String madeTime;
     private Long suggestedPrice;
     private String workDescription;
-    private LocalDateTime workDate;
+    private String workDate;
     private String address;
     @Enumerated(EnumType.STRING)
     private OrderStatus orderStatus;

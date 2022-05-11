@@ -12,6 +12,10 @@ import java.util.List;
 public class CommentService implements BaseService<Comment, Long> {
     CommentRepository commentRepository;
 
+    public CommentService(CommentRepository commentRepository) {
+        this.commentRepository = commentRepository;
+    }
+
     @Override
     @Transactional
     public Comment saveOrUpdate(Comment comment) {

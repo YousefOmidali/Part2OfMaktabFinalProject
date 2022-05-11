@@ -12,6 +12,10 @@ import java.util.List;
 public class CustomerService implements BaseService<Customer, Long> {
     CustomerRepository customerRepository;
 
+    public CustomerService(CustomerRepository customerRepository) {
+        this.customerRepository = customerRepository;
+    }
+
     @Override
     @Transactional
     public Customer saveOrUpdate(Customer customer) {

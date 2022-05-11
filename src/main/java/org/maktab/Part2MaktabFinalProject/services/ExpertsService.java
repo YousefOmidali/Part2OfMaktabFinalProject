@@ -13,6 +13,10 @@ import java.util.List;
 public class ExpertsService implements BaseService<Experts, Long> {
     ExpertsRepository expertsRepository;
 
+    public ExpertsService(ExpertsRepository expertsRepository) {
+        this.expertsRepository = expertsRepository;
+    }
+
     @Override
     @Transactional
     public Experts saveOrUpdate(Experts experts) {
@@ -48,5 +52,9 @@ public class ExpertsService implements BaseService<Experts, Long> {
                                     String email,
                                     String username) {
         return expertsRepository.findExpertsByFirstnameOrLastnameOrEmailOrUsername(firstName, lastName, email, username);
+    }
+    @Transactional
+    public byte[] getImage(String imageLink) {
+        return ExpertsRepository.getImage(imageLink);
     }
 }

@@ -12,6 +12,10 @@ import java.util.List;
 public class AdminService implements BaseService<Admin, Long> {
     AdminRepository adminRepository;
 
+    public AdminService(AdminRepository adminRepository) {
+        this.adminRepository = adminRepository;
+    }
+
     @Override
     @Transactional
     public Admin saveOrUpdate(Admin admin) {

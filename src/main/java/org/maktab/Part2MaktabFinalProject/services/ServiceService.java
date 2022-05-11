@@ -11,6 +11,10 @@ import java.util.List;
 public class ServiceService implements BaseService<Service, Long> {
     ServiceRepository serviceRepository;
 
+    public ServiceService(ServiceRepository serviceRepository) {
+        this.serviceRepository = serviceRepository;
+    }
+
     @Override
     @Transactional
     public Service saveOrUpdate(Service service) {

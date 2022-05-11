@@ -12,6 +12,10 @@ import java.util.List;
 public class SubServiceService implements BaseService<SubService, Long> {
     SubServiceRepository subServiceRepository;
 
+    public SubServiceService(SubServiceRepository subServiceRepository) {
+        this.subServiceRepository = subServiceRepository;
+    }
+
     @Override
     @Transactional
     public SubService saveOrUpdate(SubService subService) {

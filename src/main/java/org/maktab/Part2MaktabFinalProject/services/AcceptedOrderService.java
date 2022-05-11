@@ -11,6 +11,10 @@ import java.util.List;
 public class AcceptedOrderService implements BaseService<AcceptedOrder, Long> {
     AcceptedOrderRepository acceptedOrderRepository;
 
+    public AcceptedOrderService(AcceptedOrderRepository acceptedOrderRepository) {
+        this.acceptedOrderRepository = acceptedOrderRepository;
+    }
+
     @Override
     @Transactional
     public AcceptedOrder saveOrUpdate(AcceptedOrder acceptedOrder) {
