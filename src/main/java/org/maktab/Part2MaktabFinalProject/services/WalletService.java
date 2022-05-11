@@ -3,9 +3,10 @@ package org.maktab.Part2MaktabFinalProject.services;
 import org.maktab.Part2MaktabFinalProject.entity.Wallet;
 import org.maktab.Part2MaktabFinalProject.repository.WalletRepository;
 import org.maktab.Part2MaktabFinalProject.services.base.BaseService;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service
 public class WalletService implements BaseService<Wallet, Long> {
     WalletRepository walletRepository;
 

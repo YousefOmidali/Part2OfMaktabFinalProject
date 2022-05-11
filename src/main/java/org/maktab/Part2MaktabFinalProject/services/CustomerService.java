@@ -4,6 +4,7 @@ import org.maktab.Part2MaktabFinalProject.entity.Customer;
 import org.maktab.Part2MaktabFinalProject.repository.CustomerRepository;
 import org.maktab.Part2MaktabFinalProject.services.base.BaseService;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -12,21 +13,25 @@ public class CustomerService implements BaseService<Customer, Long> {
     CustomerRepository customerRepository;
 
     @Override
+    @Transactional
     public Customer saveOrUpdate(Customer customer) {
         return customerRepository.save(customer);
     }
 
     @Override
+    @Transactional
     public List<Customer> findAll() {
         return customerRepository.findAll();
     }
 
     @Override
+    @Transactional
     public Customer findById(Long id) {
         return customerRepository.getById(id);
     }
 
     @Override
+    @Transactional
     public void deleteById(Long id) {
         customerRepository.deleteById(id);
     }
@@ -35,6 +40,7 @@ public class CustomerService implements BaseService<Customer, Long> {
         return customerRepository.findCustomerByUsernameAndPassword(username, password);
     }
 
+    @Transactional
     public List<Customer> gridSearch(String firstName,
                                      String lastName,
                                      String email,
