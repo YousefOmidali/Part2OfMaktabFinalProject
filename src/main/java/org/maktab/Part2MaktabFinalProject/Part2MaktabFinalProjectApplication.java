@@ -36,16 +36,16 @@ public class Part2MaktabFinalProjectApplication {
             this.walletService = walletService;
         }
 
-        private AcceptedOrderService acceptedOrderService;
-        private AdminService adminService;
-        private CommentService commentService;
-        private CustomerService customerService;
-        private ExpertsService expertsService;
-        private OrderService orderService;
-        private ServiceService serviceService;
-        private SubServiceService subServiceService;
-        private SuggestionService suggestionService;
-        private WalletService walletService;
+        private final AcceptedOrderService acceptedOrderService;
+        private final AdminService adminService;
+        private final CommentService commentService;
+        private final CustomerService customerService;
+        private final ExpertsService expertsService;
+        private final OrderService orderService;
+        private final ServiceService serviceService;
+        private final SubServiceService subServiceService;
+        private final SuggestionService suggestionService;
+        private final WalletService walletService;
 
 
         @Override
