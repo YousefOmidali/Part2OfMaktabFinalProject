@@ -16,13 +16,13 @@ import javax.persistence.ManyToOne;
 @ToString
 @Entity
 public class Suggestion extends BaseEntity<Long> {
+    private Long suggestedPrice;
+    private String workTime;    // it can be one hour, one day or one month ...
+    private String workStartDate;
     @ManyToOne
     private Experts experts;
     @ManyToOne
     private Order order;
-    private Long suggestedPrice;
-    private String workTime;    // it can be one hour, one day or one month ...
-    private String workStartDate;
 
     
     public Suggestion(Experts experts, Order order, Long suggestedPrice, String workTime, String workStartDate) {

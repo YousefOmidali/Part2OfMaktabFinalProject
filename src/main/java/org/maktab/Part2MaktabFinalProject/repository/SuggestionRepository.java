@@ -8,5 +8,5 @@ import java.util.List;
 
 @Repository
 public interface SuggestionRepository extends JpaRepository<Suggestion, Long> {
-    List<Suggestion> findSuggestionsByOrder_IdOrderBySuggestedPriceAsc(Long id);
+    List<Suggestion> findSuggestionsByOrder_IdOrderBySuggestedPriceDesc(Long id);
 }

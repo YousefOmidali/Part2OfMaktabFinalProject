@@ -42,6 +42,6 @@ public class SuggestionService implements BaseService<Suggestion, Long> {
 
     @Transactional
     public List<Suggestion> suggestionsOfAnOrder(Long orderId) {
-        return suggestionRepository.findSuggestionsByOrder_IdOrderBySuggestedPriceAsc(orderId);
+        return suggestionRepository.findSuggestionsByOrder_IdOrderBySuggestedPriceDesc(orderId);
     }
 }

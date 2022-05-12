@@ -51,6 +51,7 @@ public class Part2MaktabFinalProjectApplication {
         @Override
         public void run(ApplicationArguments args) {
             Suggestion suggestion = null;
+            Suggestion suggestion1 = null;
             adminService.saveOrUpdate(new Admin("Yousef", "Omidali", "@"
                     , "a", "Password00@", UserStatus.NEW, String.valueOf(LocalDateTime.now())));
 
@@ -71,10 +72,10 @@ public class Part2MaktabFinalProjectApplication {
             Service service = serviceService.saveOrUpdate(new Service("Nezafat"));
             SubService subService = subServiceService.saveOrUpdate(new SubService("nezafat manzel", 50L
                     , service, new HashSet<>()));
-
             subService.getExperts().add(experts);
             subServiceService.saveOrUpdate(subService);
-
+            experts.getSubService().add(subService);
+            expertsService.saveOrUpdate(experts);
 
             Order order = orderService.saveOrUpdate(new Order(customer, subService, String.valueOf(LocalDateTime.now())
                     , 50L, "Tehran", "2022-04-15"
@@ -84,6 +85,9 @@ public class Part2MaktabFinalProjectApplication {
             try {
                 suggestion = suggestionService.saveOrUpdate(new Suggestion(experts, order
                         , 55L, "5Days", "2022-4-16"));
+
+                suggestion1 = suggestionService.saveOrUpdate(new Suggestion(experts, order
+                        , 60L, "4Days", "2022-4-18"));
             } catch (WrongPriceEntered e) {
                 System.out.println(e.getMessage());
             }
@@ -99,6 +103,12 @@ public class Part2MaktabFinalProjectApplication {
 
             order.setOrderStatus(OrderStatus.ThisOrderIsChooseByAnExpert);
             orderService.saveOrUpdate(order);
+
+            System.out.println("*************** show all orders of an expert's subServices ***************");
+            experts.getSubService()
+                    .forEach(subServicesOfExpert -> orderService.allOrdersOfASubService(subServicesOfExpert)
+                            .forEach(System.out::println));
+            System.out.println("***************");
 
         }
 
