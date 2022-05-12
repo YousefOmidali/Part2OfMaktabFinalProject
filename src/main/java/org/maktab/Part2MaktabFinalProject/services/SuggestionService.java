@@ -10,7 +10,7 @@ import java.util.List;
 
 @Service
 public class SuggestionService implements BaseService<Suggestion, Long> {
-    SuggestionRepository suggestionRepository;
+    private final SuggestionRepository suggestionRepository;
 
     public SuggestionService(SuggestionRepository suggestionRepository) {
         this.suggestionRepository = suggestionRepository;

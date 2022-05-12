@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 @Service
 public class WalletService implements BaseService<Wallet, Long> {
-    WalletRepository walletRepository;
+    private final WalletRepository walletRepository;
 
     public WalletService(WalletRepository walletRepository) {
         this.walletRepository = walletRepository;

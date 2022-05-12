@@ -9,7 +9,7 @@ import java.util.List;
 
 @org.springframework.stereotype.Service
 public class ServiceService implements BaseService<Service, Long> {
-    ServiceRepository serviceRepository;
+    private final ServiceRepository serviceRepository;
 
     public ServiceService(ServiceRepository serviceRepository) {
         this.serviceRepository = serviceRepository;

@@ -11,7 +11,7 @@ import java.util.List;
 
 @Service
 public class ExpertsService implements BaseService<Experts, Long> {
-    ExpertsRepository expertsRepository;
+    private final ExpertsRepository expertsRepository;
 
     public ExpertsService(ExpertsRepository expertsRepository) {
         this.expertsRepository = expertsRepository;

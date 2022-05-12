@@ -10,7 +10,7 @@ import java.util.List;
 
 @Service
 public class AdminService implements BaseService<Admin, Long> {
-    AdminRepository adminRepository;
+    private final AdminRepository adminRepository;
 
     public AdminService(AdminRepository adminRepository) {
         this.adminRepository = adminRepository;

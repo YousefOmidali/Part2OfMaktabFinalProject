@@ -10,7 +10,7 @@ import java.util.List;
 
 @Service
 public class SubServiceService implements BaseService<SubService, Long> {
-    SubServiceRepository subServiceRepository;
+    private final SubServiceRepository subServiceRepository;
 
     public SubServiceService(SubServiceRepository subServiceRepository) {
         this.subServiceRepository = subServiceRepository;

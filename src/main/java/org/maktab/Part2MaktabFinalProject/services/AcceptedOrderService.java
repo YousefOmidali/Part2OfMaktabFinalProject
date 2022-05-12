@@ -9,7 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 @Service
 public class AcceptedOrderService implements BaseService<AcceptedOrder, Long> {
-    AcceptedOrderRepository acceptedOrderRepository;
+    private final AcceptedOrderRepository acceptedOrderRepository;
 
     public AcceptedOrderService(AcceptedOrderRepository acceptedOrderRepository) {
         this.acceptedOrderRepository = acceptedOrderRepository;

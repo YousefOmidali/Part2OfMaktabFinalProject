@@ -10,7 +10,7 @@ import java.util.List;
 
 @Service
 public class CustomerService implements BaseService<Customer, Long> {
-    CustomerRepository customerRepository;
+    private final CustomerRepository customerRepository;
 
     public CustomerService(CustomerRepository customerRepository) {
         this.customerRepository = customerRepository;

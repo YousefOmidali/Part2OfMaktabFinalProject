@@ -81,7 +81,12 @@ public class Part2MaktabFinalProjectApplication {
                     , 50L, "Tehran", "2022-04-15"
                     , "Tehran, Azadi", OrderStatus.WaitingForExpertsSuggestion));
 
-            orderService.allOrdersOfASubService(subService).forEach(System.out::println);
+            System.out.println("*************** show all orders of an expert's subServices ***************");
+            experts.getSubService()
+                    .forEach(subServicesOfExpert -> orderService.allOrdersOfASubService(subServicesOfExpert)
+                            .forEach(System.out::println));
+            System.out.println("***************");
+
             try {
                 suggestion = suggestionService.saveOrUpdate(new Suggestion(experts, order
                         , 55L, "5Days", "2022-4-16"));
@@ -104,11 +109,7 @@ public class Part2MaktabFinalProjectApplication {
             order.setOrderStatus(OrderStatus.ThisOrderIsChooseByAnExpert);
             orderService.saveOrUpdate(order);
 
-            System.out.println("*************** show all orders of an expert's subServices ***************");
-            experts.getSubService()
-                    .forEach(subServicesOfExpert -> orderService.allOrdersOfASubService(subServicesOfExpert)
-                            .forEach(System.out::println));
-            System.out.println("***************");
+
 
         }
 

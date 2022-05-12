@@ -10,7 +10,7 @@ import java.util.List;
 
 @Service
 public class CommentService implements BaseService<Comment, Long> {
-    CommentRepository commentRepository;
+    private final CommentRepository commentRepository;
 
     public CommentService(CommentRepository commentRepository) {
         this.commentRepository = commentRepository;
